@@ -18,7 +18,6 @@ const BlogBody = styled.div`
 `;
 
 const IndexPage = ({ data }) => {
-    console.log(data);
     return (
         <Layout>
             <div>
@@ -43,7 +42,7 @@ export default IndexPage;
 
 export const query = graphql`
     query {
-        allMarkdownRemark {
+        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
             totalCount
             edges {
                 node {
