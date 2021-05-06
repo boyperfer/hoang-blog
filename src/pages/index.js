@@ -22,8 +22,7 @@ const IndexPage = ({ data }) => {
     return (
         <Layout>
             <div>
-                <h1>Hoang's thoughts</h1>
-                <h4>{data.allMarkdownRemark.totalCount}</h4>
+                <h4>{data.allMarkdownRemark.totalCount} posts</h4>
                 {data.allMarkdownRemark.edges.map(({ node }) => (
                     <BlogBody key={node.id}>
                         <BlogLink to={node.fields.slug}>
